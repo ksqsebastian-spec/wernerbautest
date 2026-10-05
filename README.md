@@ -15,7 +15,7 @@ The initial deployment used the connected Cloudflare API. No deployment credenti
 
 ## Behavior
 
-Service disclosures, project dialogs and mobile navigation are functional. Contact uses telephone and prepared email links. The visitor reviews and sends the email through their own email program. No server-side contact form or analytics are configured.
+Service disclosures, project dialogs and mobile navigation are functional. Contact includes an inquiry dialog and a callback dialog with preferred time. Both prepare an email locally; WhatsApp is an explicitly labeled placeholder until a number is provided. The visitor reviews and sends the email through their own email program. No server-side contact form or analytics are configured.
 
 The test site is excluded from search indexing through metadata, HTTP headers and robots.txt. Corporate details and legal/hosting arrangements need review before transfer to the primary company domain.
 
