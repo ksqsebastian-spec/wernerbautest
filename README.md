@@ -62,3 +62,9 @@ The top-right application button opens `/karriere`, an internal careers page in 
 ## Gallery simplification
 
 Removed the saved list, quick-save buttons, selection sharing/inquiry controls and the four image-detail actions (save, copy link, download, original source). The viewer keeps photo navigation, zoom/fullscreen, comparison and the single inquiry action. No saved-list browser storage is read or written. Existing individual picture links remain supported for photo-related inquiries.
+
+## Mobile layout repair
+
+Phone layouts use a shared inline menu, larger type and touch targets, a category selector instead of clipped gallery tabs, two meaningful image-size choices, and a contact dock that appears after the hero contact options leave view. The photo archive starts with 12 images on phones and 18 on desktop. Gallery scroll anchoring is disabled and phone animations are shorter. Inquiry/callback dialogs fill the phone viewport; careers and legal pages share the mobile styles. Initial fragment navigation is restored after font/layout settling unless the visitor has already interacted.
+
+Browser verification at 320, 390, 414 and 1280px covered page rendering, overflow, menu navigation, gallery search/no-results/reset, category selection, density, layout changes, pagination, comparison, portraits, inquiry/callback preparation and the application flow. No message or call was sent. Console checks found no application errors. These are Chromium browser viewport checks; actual iOS Safari keyboard and device safe-area behavior still need device verification.
