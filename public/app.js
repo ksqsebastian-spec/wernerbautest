@@ -70,3 +70,16 @@ if(galleryPhotos.length){
  document.querySelector('#viewer-contact').addEventListener('click',()=>{const photo=activePhoto();closeViewer();openContact('inquiry');if(!inquiryForm.elements.message.value)inquiryForm.elements.message.value='Ich möchte ein ähnliches Vorhaben besprechen.\n\nBildreferenz: '+photoLink(photo)+'\n\nMein Anliegen: ';inquiryForm.elements.message.focus();});
  renderGallery();const initialId=new URL(location.href).searchParams.get('bild');const initialPhoto=galleryPhotos.find(p=>p.dataset.photoId===initialId);if(initialPhoto){viewerPhotos=galleryPhotos.slice();showPhoto(viewerPhotos.indexOf(initialPhoto));}
 }
+
+// Portraits keep the compact company overview and open the uncropped source on demand.
+const portraitDialog=document.querySelector('#portrait-dialog');
+document.querySelectorAll('.portrait-open').forEach(button=>button.addEventListener('click',()=>{
+ const person=button.closest('article'),image=button.querySelector('img'),email=person.querySelector('a');
+ const large=document.querySelector('#portrait-large');large.src=image.src;large.alt=image.alt;
+ document.querySelector('#portrait-name').textContent=person.querySelector('h3').textContent;
+ document.querySelector('#portrait-role').textContent=person.querySelector('p').textContent;
+ const link=document.querySelector('#portrait-email');link.href=email.href;link.textContent=email.textContent;
+ portraitDialog.showModal();
+}));
+portraitDialog?.querySelector('.dialog-close').addEventListener('click',()=>portraitDialog.close());
+portraitDialog?.addEventListener('click',event=>{if(event.target===portraitDialog){const rect=portraitDialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)portraitDialog.close();}});
