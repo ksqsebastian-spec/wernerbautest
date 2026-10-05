@@ -1,6 +1,6 @@
 # Werner Bau
 
-German company website focused on renovation for schools, public facilities and managed properties in Hamburg.
+Restrained editorial company website focused on renovation for schools, public facilities and managed properties in Hamburg.
 
 Live test site: https://wernerbautest.ksqsebastian.workers.dev
 
@@ -15,7 +15,7 @@ The initial deployment used the connected Cloudflare API. No deployment credenti
 
 ## Behavior
 
-Service disclosures, project dialogs and mobile navigation are functional. Contact includes an inquiry dialog and a callback dialog with preferred time. Both prepare an email locally; WhatsApp is an explicitly labeled placeholder until a number is provided. The visitor reviews and sends the email through their own email program. No server-side contact form or analytics are configured.
+The typography-led page uses an always-visible link index and inline service/reference disclosures. Named references are the Oberfinanzdirektion façade renovation (2006) and the company-reported HAW Hamburg framework-contract collaboration. Unidentified company photos are presented separately as gallery insights. Contact includes an inquiry dialog and a callback dialog with preferred time. Both prepare an email locally; WhatsApp is an explicitly labeled placeholder until a number is provided. The visitor reviews and sends the email through their own email program. No server-side contact form or analytics are configured.
 
 The test site is excluded from search indexing through metadata, HTTP headers and robots.txt. Corporate details and legal/hosting arrangements need review before transfer to the primary company domain.
 
