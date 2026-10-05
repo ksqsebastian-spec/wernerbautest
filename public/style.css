@@ -27,3 +27,8 @@
 
 #inquiry-form>label{grid-column:auto}#inquiry-form>.request-kind,#inquiry-form>label:nth-of-type(n+4){grid-column:1/-1}
 @media(max-width:700px){.reference-gallery[data-layout=wall]{columns:var(--mobile-columns,2)}.reference-gallery[data-layout=grid]{grid-template-columns:repeat(var(--mobile-columns,2),minmax(0,1fr))}}
+
+/* Give the people behind the company a generous, readable presence. */
+.people{margin-top:34px}.people article{gap:36px;padding:32px 0;align-items:center}.people img{width:200px;height:200px;object-position:75% 50%}.people article>div{min-width:0}.people h3{font-size:25px;line-height:1.35;margin-bottom:7px}.people p,.people a{font-size:15px;line-height:1.8}.people a{display:inline-block;margin-top:9px;overflow-wrap:anywhere}.portrait-open span{margin-top:9px;font-size:11px}.group{margin-top:38px}
+@media(max-width:700px){.people{margin-top:28px}.people article{gap:24px;padding:28px 0}.people img{width:128px;height:152px}.people h3{font-size:22px}.people p,.people a{font-size:13px}.people a{margin-top:7px}}
+@media(max-width:380px){.people article{gap:20px}.people img{width:104px;height:130px}.people h3{font-size:21px}.people p,.people a{font-size:12px}}
