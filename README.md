@@ -48,3 +48,7 @@ The prior archive is preserved in tag `werner-archive-approved-2026-10-05` (comm
 Implementation lives in `public/gallery-motion.js` and `public/gallery.css`. CSS-only grid/columns remain a fallback when motion enhancement is absent. Real photos are deliberately cropped in the wall to create varying proportions; the viewer shows the full image. No generated project imagery is published.
 
 Current-session Mobbin reference: https://mobbin.com/screens/f50a3921-35cc-4d7f-ae07-0f2643c05bae (Cosmos collection, variable image sizes and quiet chrome). Browser checks at 1280×720 and 390×844 cover search, no-result reset, category filters, size and layout changes, opening animation, filmstrip, keyboard close, comparison slider, saved selections and picture-to-inquiry transfer.
+
+## Opening photograph selection
+
+The first 18 pictures are curated from the original company archive, led by historic masonry, a school courtyard, a covered walkway, an iron balcony and a finished timber floor with panelled doors. Per-picture proportions and focal positions preserve the important architectural details in the masonry wall; the full photograph remains available in the viewer. The first five thumbnails load eagerly. All 173 photographs, IDs, saved selections and before/after comparisons are retained.
