@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import {contact} from '../src/contact.mjs';
+const env={RESEND_API_KEY:'test-only',CONTACT_FROM:'Test <onboarding@resend.dev>',CONTACT_TO:'recipient@example.com',CONTACT_TEST:'true',CONTACT_LIMITER:{limit:async()=>({success:true})}};
+const base={mode:'inquiry',name:'UI Test',email:'visitor@example.com',message:'Test inquiry'};
+let calls=0;const send=async(url,opts)=>{calls++;const payload=JSON.parse(opts.body);assert.deepEqual(payload.to,['recipient@example.com']);assert.equal(payload.reply_to,base.email);assert.match(payload.text,/TESTWEBSITE/);return new Response(JSON.stringify({id:'test-id'}),{status:200})};
+const req=(body=base,origin='https://test.example')=>new Request('https://test.example/api/contact',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:JSON.stringify(body)});
+assert.equal((await contact(req({...base,to:'other@example.com'}),env,send)).status,201);
+assert.equal((await contact(req(base,'https://other.example'),env,send)).status,403);
+assert.equal((await contact(req({...base,email:'bad\r\naddress'}),env,send)).status,400);
+assert.equal((await contact(req({...base,website:'spam'}),env,send)).status,400);
+assert.equal((await contact(req({...base,message:'x'.repeat(25000)}),env,send)).status,413);
+assert.equal((await contact(req(),{...env,CONTACT_LIMITER:{limit:async()=>({success:false})}},send)).status,429);
+assert.equal((await contact(req(),{...env,CONTACT_LIMITER:{limit:async()=>{throw Error('offline')}}},send)).status,503);
+assert.equal((await contact(req(),env,async()=>new Response('{}',{status:500}))).status,502);
+assert.equal((await contact(req({...base,mode:'callback',phone:'abc'}),env,send)).status,400);
+assert.equal((await contact(req({...base,mode:'callback',phone:'+49 40 12345',timing:'Wunschzeit'}),env,send)).status,400);
+assert.equal((await contact(req({...base,mode:'callback',phone:'+49 40 12345'}),env,async()=>new Response('{"id":"callback-id"}'))).status,201);
+assert.equal(calls,1);console.log('Contact: fixed recipient, validation, origin, size/rate limits, callback and provider failure verified.');

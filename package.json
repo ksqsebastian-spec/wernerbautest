@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "dev": "node scripts/serve.mjs",
-    "check": "node --check public/app.js && node --check scripts/build.mjs && node scripts/check.mjs",
+    "check": "node --check public/app.js && node --check scripts/build.mjs && node --check src/contact.mjs && node scripts/check.mjs && node scripts/contact-test.mjs",
     "deploy": "npm run build && wrangler deploy --config wrangler.photos0.jsonc && wrangler deploy --config wrangler.photos1.jsonc && wrangler deploy --config wrangler.photos2.jsonc && wrangler deploy"
   },
   "devDependencies": {

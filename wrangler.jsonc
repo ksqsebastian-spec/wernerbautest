@@ -3,6 +3,8 @@
   "main": "dist/worker.mjs",
   "compatibility_date": "2026-10-05",
   "workers_dev": true,
+  "vars": {"CONTACT_FROM":"Werner Bau Test <onboarding@resend.dev>","CONTACT_TO":"ksqsebastian@gmail.com","CONTACT_TEST":"true","CONTACT_ENABLED":"false"},
+  "ratelimits": [{"name":"CONTACT_LIMITER","namespace_id":"76100501","simple":{"limit":5,"period":60}}],
   "services": [
     {
       "binding": "PHOTO0",
