@@ -40,3 +40,11 @@ The expanded archive has adjustable image sizes, a six-image filmstrip, quick sa
 Current Mobbin reference: https://mobbin.com/screens/88989e22-126c-49fc-aef2-f1012718995b (Cosmos image density controls). The approved visual language remains white with serif headings and fine dividers; real company photos retain their original proportions.
 
 Validation: backend tests cover fixed recipient, wrong origin, invalid email/callback fields, oversized requests, rate limits and provider failure. Live desktop and 390px checks cover filters, search, density, grid, comparison, saved selection sharing, image loading and inquiry/callback preparation to the exact Gmail recipient. Resend delivery has not succeeded; the UI does not claim that an email was sent.
+
+## Studio motion iteration
+
+The prior archive is preserved in tag `werner-archive-approved-2026-10-05` (commit `571e904`). The gallery now uses a compact sticky capsule toolbar, an editorial masonry arrangement, image hover actions, an animated filter indicator, staggered reveals, FLIP position changes and shared-image open/close transitions. Density changes recompose the same real photos. Full-sized images are loaded progressively without changing the viewer geometry. An OS reduced-motion preference bypasses JavaScript animations and CSS transitions. The company copy and contact delivery configuration retain their previous behavior.
+
+Implementation lives in `public/gallery-motion.js` and `public/gallery.css`. CSS-only grid/columns remain a fallback when motion enhancement is absent. Real photos are deliberately cropped in the wall to create varying proportions; the viewer shows the full image. No generated project imagery is published.
+
+Current-session Mobbin reference: https://mobbin.com/screens/f50a3921-35cc-4d7f-ae07-0f2643c05bae (Cosmos collection, variable image sizes and quiet chrome). Browser checks at 1280×720 and 390×844 cover search, no-result reset, category filters, size and layout changes, opening animation, filmstrip, keyboard close, comparison slider, saved selections and picture-to-inquiry transfer.
