@@ -52,3 +52,5 @@ Current-session Mobbin reference: https://mobbin.com/screens/f50a3921-35cc-4d7f-
 ## Opening photograph selection
 
 The first 18 pictures are curated from the original company archive, led by historic masonry, a school courtyard, a covered walkway, an iron balcony and a finished timber floor with panelled doors. Per-picture proportions and focal positions preserve the important architectural details in the masonry wall; the full photograph remains available in the viewer. The first five thumbnails load eagerly. All 173 photographs, IDs, saved selections and before/after comparisons are retained.
+
+The gallery wall now displays the available 1000px photographs directly, rather than enlarged 480px thumbnails. The opening five still load eagerly; the remaining photographs load lazily. Photo services and original assets are unchanged.
