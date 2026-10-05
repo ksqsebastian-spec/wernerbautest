@@ -1,1 +1,20 @@
-{"name":"wernerbautest","main":"dist/worker.mjs","compatibility_date":"2026-10-05","workers_dev":true}
+{
+  "name": "wernerbautest",
+  "main": "dist/worker.mjs",
+  "compatibility_date": "2026-10-05",
+  "workers_dev": true,
+  "services": [
+    {
+      "binding": "PHOTO0",
+      "service": "wernerbautest-photos0"
+    },
+    {
+      "binding": "PHOTO1",
+      "service": "wernerbautest-photos1"
+    },
+    {
+      "binding": "PHOTO2",
+      "service": "wernerbautest-photos2"
+    }
+  ]
+}

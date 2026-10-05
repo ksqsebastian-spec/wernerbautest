@@ -1,0 +1,6 @@
+{
+  "name": "wernerbautest-photos2",
+  "main": "dist/worker-photo2.mjs",
+  "compatibility_date": "2026-10-05",
+  "workers_dev": false
+}
